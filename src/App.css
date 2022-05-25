@@ -1,5 +1,11 @@
+body {
+  background-color: black;
+  color: white;
+}
+
 .App {
   text-align: center;
+  font-family: OCR A Std, monospace;
 }
 
 .App-logo {
@@ -22,6 +28,24 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.Church-container {
+  width: 20%;
+  padding-top: 1%;
+  border: 1px solid white;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+.Item-container {
+  width: 20%;
+  height: 10%;
+  border: 2px solid blue;
+}
+
+.church-img {
+  width: 100%;
 }
 
 .App-link {
