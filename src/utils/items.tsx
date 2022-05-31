@@ -1,4 +1,4 @@
-import {ManipulateFaith} from "./App";
+import ManipulateFaith from './ManipulateFaith'
 
 /** Describes a class for an item. Other items inherit from this class. */
 abstract class ItemClass {

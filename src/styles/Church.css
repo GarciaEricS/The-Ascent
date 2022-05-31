@@ -1,0 +1,12 @@
+.Church-container {
+    background-color: rgb(85, 25, 25);
+    width: 20%;
+    padding-top: 1%;
+    border: 1px solid white;
+    margin-left: 2%;
+    margin-top: 2%;
+  }
+
+.church-img {
+    width: 100%;
+  }
