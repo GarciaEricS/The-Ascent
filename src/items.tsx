@@ -28,7 +28,7 @@ class Pointer extends ItemClass{
     effect = (faithTools: ManipulateFaith) => {
         faithTools.setFaith(faith => faith + faithTools.FPC);
         faithTools.setFPS(FPS => FPS + 1);
-        if (this.numberOwned % 25 == 0) {
+        if (this.numberOwned % 25 === 0) {
             faithTools.setFPC((FPC) => FPC * 2);
             console.log("doubled" + faithTools.FPC)
         }
