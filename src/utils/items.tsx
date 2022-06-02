@@ -26,6 +26,7 @@ abstract class ItemClass {
     effect = (faithTools: ManipulateFaith) => {};
   }
 
+  
 class Pointer extends ItemClass{
     itemName = "Pointer";
     description = "The basic item. Gives you Faith equal to one click"
