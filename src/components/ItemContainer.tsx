@@ -5,7 +5,7 @@ import * as items from '../utils/items';
 function ItemContainer({faithTools}: {faithTools: ManipulateFaith}) {
     return (
       <div className="Item-Container">
-        {items.allItems.map(item => 
+        {items.allItemsArray.map(item => 
           <Item key="{item}" item={item} faithTools={faithTools}/>
         )}
       </div>

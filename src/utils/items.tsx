@@ -35,7 +35,24 @@ class Pointer extends ItemClass{
     }
 }
 
-const allItems: ItemClass[] = [new Pointer()];
+function generateItemAmounts() {
+    function generateItemAmountsFromArray(allItemsArray: ItemClass[]) {
+        let itemAmountsDict: {[name:string]: number} = {};
+        allItemsArray.forEach((item) => {
+            itemAmountsDict[item.itemName] = item.numberOwned;
+        })
+        console.log(itemAmountsDict)
+        return itemAmountsDict;
+    }
+    return generateItemAmountsFromArray(allItemsArray);
+}
 
-export {allItems, ItemClass}
+const allItemsArray: ItemClass[] = [new Pointer()];
+let allItemsDict: {[name:string]: ItemClass} = {};
+
+allItemsArray.forEach((item) => {
+    allItemsDict[item.itemName] = item;
+})
+
+export {allItemsArray, allItemsDict, ItemClass, generateItemAmounts}
   

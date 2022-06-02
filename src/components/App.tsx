@@ -1,11 +1,24 @@
 import ManipulateFaith from '../utils/ManipulateFaith';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../styles/App.css';
 import Church from './Church';
 import ItemContainer from './ItemContainer'
+import Save from './Save'
+import * as saveGeneration from '../utils/saveGeneration';
 
 /** Component for the whole app. Displays Church and Items. */
 function App() {
+
+  useEffect(() => {
+    const saveString = localStorage.getItem('save');
+    if (saveString !== null) {
+      const save: saveGeneration.SaveFile = JSON.parse(saveString);
+      saveGeneration.loadSave(save, faithTools);
+    }
+  }, 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  [])
+  
   const [faith, setFaith] = useState(0);
   const [FPS, setFPS] = useState(0);
   const [FPC, setFPC] = useState(1);
@@ -20,6 +33,7 @@ function App() {
     <div className="App">
       <Church faithTools={faithTools}/>
       <ItemContainer faithTools={faithTools} />
+      <Save faithTools={faithTools} />
     </div>
   );
 }
