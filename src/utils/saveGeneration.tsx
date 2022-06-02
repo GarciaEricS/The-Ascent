@@ -23,6 +23,9 @@ import ManipulateFaith from './ManipulateFaith';
     }
 }
 
+/** Returns a save file object with a number of faith, faith per second,
+ * faith per click, and given number of items amounts generated with the 
+ * generateItemAmounts functon in items.tsx. */
 function createSaveFile(
     faith: number, 
     FPS: number,
@@ -32,6 +35,10 @@ function createSaveFile(
         return new SaveFile(faith, FPS, FPC, itemAmounts);
     }
 
+/** Loads a save file, using the tools in ManipulateFaith to set all
+ * necessary values, and sets the items to have the correct value
+ * of amount owned.
+ */
 function loadSave(
     save: SaveFile, 
     faithTools: ManipulateFaith
@@ -39,6 +46,7 @@ function loadSave(
     faithTools.setFaith((faith) => save.faith)
     faithTools.setFPS((FPS) => save.FPS)
     faithTools.setFPC((FPC) => save.FPC)
+
     for (var itemName in save.itemAmounts) {
         const currItem = items.allItemsDict[itemName];
         currItem.numberOwned = save.itemAmounts[itemName];

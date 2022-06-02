@@ -1,5 +1,12 @@
 import ManipulateFaith from './ManipulateFaith'
 
+/** Items are represented through a singleton object which holds information about
+ * the name of the object, its description, a cost multiplier, the base cost, a way
+ * to calculate the current cost, an image for the object, the number owned, and its
+ * behavior on click. These items are accessed through the instantiated objects in the
+ * arrays and dictionaries below.
+ */
+
 /** Describes a class for an item. Other items inherit from this class. */
 abstract class ItemClass {
     itemName = "";
@@ -35,6 +42,10 @@ class Pointer extends ItemClass{
     }
 }
 
+/** Helper functions for item classes. */
+
+/** Generates a dictionary of item names and the corresponding amounts.
+ * Used in save generation. */
 function generateItemAmounts() {
     function generateItemAmountsFromArray(allItemsArray: ItemClass[]) {
         let itemAmountsDict: {[name:string]: number} = {};
@@ -47,7 +58,14 @@ function generateItemAmounts() {
     return generateItemAmountsFromArray(allItemsArray);
 }
 
+/** An array of all instantiated item objects. Used for iterating through
+ *  all objects and generally accessing the instantiated objects. */
 const allItemsArray: ItemClass[] = [new Pointer()];
+
+/** A dictionary mapping item names to the corresponding object
+ * represented an item. Used to link together object names to the object
+ * to create a link between corresponding objects persistently.
+ */
 let allItemsDict: {[name:string]: ItemClass} = {};
 
 allItemsArray.forEach((item) => {

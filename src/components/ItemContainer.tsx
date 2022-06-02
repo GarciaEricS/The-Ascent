@@ -2,6 +2,7 @@ import ManipulateFaith from '../utils/ManipulateFaith';
 import '../styles/Item-Container.css';
 import * as items from '../utils/items';
 
+/** Contains all item components. */
 function ItemContainer({faithTools}: {faithTools: ManipulateFaith}) {
     return (
       <div className="Item-Container">

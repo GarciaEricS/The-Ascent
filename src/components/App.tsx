@@ -9,6 +9,7 @@ import * as saveGeneration from '../utils/saveGeneration';
 /** Component for the whole app. Displays Church and Items. */
 function App() {
 
+  /** Handles loading save on applications startup. */
   useEffect(() => {
     const saveString = localStorage.getItem('save');
     if (saveString !== null) {
