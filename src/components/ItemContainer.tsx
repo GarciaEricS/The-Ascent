@@ -28,18 +28,25 @@ function ItemContainer({faithTools}: {faithTools: ManipulateFaith}) {
         >
             {item.itemName + " " + Math.floor(item.currCost())}
         </div>
-        <ItemDescription item={item} display={display}/>
+        <ItemInformation item={item} display={display}/>
       </div>
     );
   }
 
-  function ItemDescription({item, display}:
+  function ItemInformation({item, display}:
     {item: items.ItemClass, display: boolean}) {
       if (!display) {
         return <></>
     }
     return (
-      <div>Description</div>
+      <div className="Item-Information">
+        <div className="Extra-Info">
+          {item.numberOwned + " " + item.itemName + "s"}
+        </div>
+        <div className="Item-Description">
+          {item.description}
+        </div>
+      </div>
     )
   }
 export default ItemContainer;

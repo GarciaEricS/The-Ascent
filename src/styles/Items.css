@@ -13,5 +13,18 @@
 }
 
 .Item-Information {
-  position: absolute;
+  background-color: black;
+  overflow: hidden;
+}
+
+.Item-Description {
+  width: 75%;
+  float: left;
+}
+
+.Extra-Info {
+  border: 1px solid red;
+  width: 20%;
+  height: 100%;
+  float: left;
 }
