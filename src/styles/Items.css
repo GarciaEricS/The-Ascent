@@ -1,0 +1,17 @@
+.Item-Container {
+    float: right;
+    width: 40%;
+    height: 100%;
+    border: 3px solid rgb(0, 0, 0);
+  }
+
+.Item {
+  width: 100%;
+  background-color: black;
+  color: white;
+  user-select: none;
+}
+
+.Item-Information {
+  position: absolute;
+}

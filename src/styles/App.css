@@ -1,6 +1,7 @@
 body {
-  background-color: black;
+  background-color: rgb(50, 50, 50);
   color: white;
+  font-family: OCR A Std, monospace;
 }
 
 .App {
