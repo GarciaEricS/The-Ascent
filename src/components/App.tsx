@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 import '../styles/App.css';
 import Church from './Church';
 import ItemContainer from './ItemContainer'
-import Save from './Save'
 import * as saveGeneration from '../utils/saveGeneration';
+import TopBar from './TopBar';
 
 /** Component for the whole app. Displays Church and Items. */
 function App() {
@@ -32,9 +32,9 @@ function App() {
 
   return (
     <div className="App">
+      <TopBar faithTools={faithTools}/>
       <Church faithTools={faithTools}/>
-      <ItemContainer faithTools={faithTools} />
-      <Save faithTools={faithTools} />
+      <ItemContainer faithTools={faithTools}/>
     </div>
   );
 }

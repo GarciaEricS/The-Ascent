@@ -1,0 +1,32 @@
+.Top-Bar {
+    background-color: red;
+    height: 4em;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.Save-Container {
+    position: absolute;
+    border-left: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+}
+
+.save-button {
+    color: inherit;
+    background-color: inherit;
+    border-width: 0;
+    padding-top: 9%;
+    padding-bottom: 9%;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.save-button:hover {
+    color: red;
+    background-color: white;
+}
