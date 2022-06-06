@@ -38,7 +38,21 @@ class Pointer extends ItemClass{
         faithTools.setFPS(FPS => FPS + 1);
         if (this.numberOwned % 25 === 0) {
             faithTools.setFPC((FPC) => FPC * 2);
-            console.log("doubled" + faithTools.FPC)
+        }
+    }
+}
+
+class Deacon extends ItemClass{
+    itemName = "Deacon";
+    description = "Make a new deacon friend. Adds 10 faith per deacon. "
+    + "At 100 deacons, multiply current faith by 10."
+    baseCost = 300;
+    img = ""
+    effect = (faithTools: ManipulateFaith) => {
+        faithTools.setFaith(faith => faith + faithTools.FPC);
+        faithTools.setFPS(FPS => FPS + 10);
+        if (this.numberOwned === 100) {
+            faithTools.setFaith((faith) => faith * 10);
         }
     }
 }
@@ -61,7 +75,7 @@ function generateItemAmounts() {
 
 /** An array of all instantiated item objects. Used for iterating through
  *  all objects and generally accessing the instantiated objects. */
-const allItemsArray: ItemClass[] = [new Pointer()];
+const allItemsArray: ItemClass[] = [new Pointer(), new Deacon()];
 
 /** A dictionary mapping item names to the corresponding object
  * represented an item. Used to link together object names to the object

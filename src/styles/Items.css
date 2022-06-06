@@ -1,0 +1,30 @@
+.Item-Container {
+    float: right;
+    width: 40%;
+    height: 100%;
+    border: 3px solid rgb(0, 0, 0);
+  }
+
+.Item {
+  width: 100%;
+  background-color: black;
+  color: white;
+  user-select: none;
+}
+
+.Item-Information {
+  background-color: black;
+  overflow: hidden;
+}
+
+.Item-Description {
+  width: 75%;
+  float: left;
+}
+
+.Extra-Info {
+  border: 1px solid red;
+  width: 20%;
+  height: 100%;
+  float: left;
+}
