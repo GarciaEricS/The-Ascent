@@ -23,11 +23,13 @@ function App() {
   const [faith, setFaith] = useState(0);
   const [FPS, setFPS] = useState(0);
   const [FPC, setFPC] = useState(1);
+  const [churchName, setChurchName] = useState("Yousif's")
 
   const faithTools: ManipulateFaith = {
     faith, setFaith, 
     FPS, setFPS, 
-    FPC, setFPC
+    FPC, setFPC,
+    churchName, setChurchName
   };
 
   return (

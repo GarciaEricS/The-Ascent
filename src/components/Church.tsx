@@ -11,7 +11,6 @@ const NUM_TICKS = 100;
  *  ways to manipulate faith. */
  function Church({faithTools, name}: {faithTools: ManipulateFaith, name: string}) {
 
-    let [churchName, setChurchName] = useState(name)
     let [editMode, setEditMode] = useState(false);
     
     useEffect(() => {
@@ -42,8 +41,8 @@ const NUM_TICKS = 100;
         />
   
         <ChurchName 
-          churchName={churchName} 
-          setChurchName={setChurchName} 
+          churchName={faithTools.churchName} 
+          setChurchName={faithTools.setChurchName} 
           editMode={editMode} 
           setEditMode={setEditMode}
         />

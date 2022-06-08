@@ -5,7 +5,7 @@ import '../styles/TopBar.css';
 
 /** Functional component for the save buttons. Includes behavior when the
  * buttons are clicked. */
-function Save({faithTools}: {faithTools: ManipulateFaith}) {
+function Save({faithTools}: {faithTools: ManipulateFaith}, churchName: string) {
     /** Function for what occurs on click of the save button.
      * Generates a save and saves the save into local storage. */
     function createSave() {
@@ -13,7 +13,8 @@ function Save({faithTools}: {faithTools: ManipulateFaith}) {
             faithTools.faith,
             faithTools.FPS,
             faithTools.FPC,
-            items.generateItemAmounts()
+            items.generateItemAmounts(),
+            churchName
         );
         localStorage.setItem('save', JSON.stringify(save));
     }

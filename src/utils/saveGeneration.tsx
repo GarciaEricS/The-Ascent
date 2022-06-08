@@ -9,17 +9,20 @@ import ManipulateFaith from './ManipulateFaith';
     FPS: number;
     FPC: number;
     itemAmounts: {[name:string]: number};
+    churchName: string;
 
     constructor(
         faith: number, 
         FPS: number,
         FPC: number,
-        itemAmounts: {[name:string]: number}
+        itemAmounts: {[name:string]: number},
+        churchName: string
         ) {
             this.faith = faith;
             this.FPS = FPS;
             this.FPC = FPC;
             this.itemAmounts = itemAmounts;
+            this.churchName = churchName;
     }
 }
 
@@ -30,9 +33,10 @@ function createSaveFile(
     faith: number, 
     FPS: number,
     FPC: number,
-    itemAmounts: {[name:string]: number}
+    itemAmounts: {[name:string]: number},
+    churchName: string
     ) {
-        return new SaveFile(faith, FPS, FPC, itemAmounts);
+        return new SaveFile(faith, FPS, FPC, itemAmounts, churchName);
     }
 
 /** Loads a save file, using the tools in ManipulateFaith to set all
