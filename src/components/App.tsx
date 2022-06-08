@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div className="App">
-      <Church faithTools={faithTools}/>
+      <Church faithTools={faithTools} name={"hello"}/>
       <ItemContainer faithTools={faithTools} />
       <Save faithTools={faithTools} />
     </div>

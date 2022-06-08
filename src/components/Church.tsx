@@ -1,6 +1,6 @@
 import ManipulateFaith from '../utils/ManipulateFaith';
 import '../styles/Church.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 /** Number of miliseconds before between Faith counter increasing
  * from Faith per second. */
@@ -9,9 +9,10 @@ const NUM_TICKS = 100;
 /** Functional component for the Church. Displays the church, amount of faith,
  *  the name, and contains the logic for clicking on these. Arguments include
  *  ways to manipulate faith. */
- function Church({faithTools}: {faithTools: ManipulateFaith}) {
+ function Church({faithTools, name}: {faithTools: ManipulateFaith, name: string}) {
 
-    let churchName = 'Placeholder';
+    let [churchName, setChurchName] = useState(name)
+    let [editMode, setEditMode] = useState(false);
     
     useEffect(() => {
       let interval = setInterval(() => tick(), 1000 / NUM_TICKS);
@@ -40,7 +41,7 @@ const NUM_TICKS = 100;
           onClick={onClick}
         />
   
-        <div>{churchName + " church"}</div>
+        <ChurchName churchName={churchName} setChurchName={setChurchName} editMode={editMode} setEditMode={setEditMode}/>
   
         <div>{faithTools.FPS + " Faith per Second"}</div>
   
@@ -49,5 +50,32 @@ const NUM_TICKS = 100;
       </div>
     );
   }
+
+function ChurchName({churchName, setChurchName, editMode, setEditMode}: 
+  {
+  churchName: string, 
+  setChurchName: React.Dispatch<React.SetStateAction<string>>, 
+  editMode: boolean
+  setEditMode: React.Dispatch<React.SetStateAction<boolean>>
+  }) {
+
+  function handleEnter(event: any) {
+    console.log(event);
+    setChurchName((churchName) => event.target.value);
+    if (event.key === "Enter") {
+      setEditMode((editMode) => false)
+    } 
+  }
+
+  if (editMode) {
+    return (
+      <input id="churchNameInput" type='text' onKeyDown={handleEnter} ></input>
+    )
+  }
+
+  return (
+    <div onClick={() => setEditMode((editMode) => true)}>{churchName + " church"}</div>
+  )
+}
 
 export default Church;
