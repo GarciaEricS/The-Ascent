@@ -64,8 +64,9 @@ function ChurchName({churchName, setChurchName, editMode, setEditMode}:
   }) {
 
   function handleEnter(event: any) {
-    console.log(event);
-    setChurchName((churchName) => event.target.value);
+    if (event.target.value !== "") {
+      setChurchName((churchName) => event.target.value);
+    }
     if (event.key === "Enter") {
       setEditMode((editMode) => false)
     } 
