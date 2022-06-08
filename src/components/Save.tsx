@@ -10,11 +10,8 @@ function Save({faithTools}: {faithTools: ManipulateFaith}, churchName: string) {
      * Generates a save and saves the save into local storage. */
     function createSave() {
         let save = saveGeneration.createSaveFile(
-            faithTools.faith,
-            faithTools.FPS,
-            faithTools.FPC,
+            faithTools,
             items.generateItemAmounts(),
-            churchName
         );
         localStorage.setItem('save', JSON.stringify(save));
     }
