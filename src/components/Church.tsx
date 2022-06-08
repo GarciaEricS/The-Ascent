@@ -41,7 +41,12 @@ const NUM_TICKS = 100;
           onClick={onClick}
         />
   
-        <ChurchName churchName={churchName} setChurchName={setChurchName} editMode={editMode} setEditMode={setEditMode}/>
+        <ChurchName 
+          churchName={churchName} 
+          setChurchName={setChurchName} 
+          editMode={editMode} 
+          setEditMode={setEditMode}
+        />
   
         <div>{faithTools.FPS + " Faith per Second"}</div>
   
