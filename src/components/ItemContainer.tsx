@@ -8,7 +8,7 @@ function ItemContainer({faithTools}: {faithTools: ManipulateFaith}) {
     return (
       <div className="Item-Container">
         {items.allItemsArray.map(item => 
-          <Item key="{item}" item={item} faithTools={faithTools}/>
+          <Item key={item.itemName} item={item} faithTools={faithTools}/>
         )}
       </div>
     )

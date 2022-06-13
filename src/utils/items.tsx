@@ -27,9 +27,9 @@ abstract class ItemClass {
   }
 
   
-class Pointer extends ItemClass{
-    itemName = "Pointer";
-    description = "The basic item. Gives you Faith equal to one click"
+class AttendChurch extends ItemClass{
+    itemName = "Attend Church";
+    description = "Attend church once. Gives you Faith equal to one click"
     + " and increases FPS by 1. For every 25 bought, Faith per click doubles."
     baseCost = 10;
     img = ""
@@ -75,7 +75,7 @@ function generateItemAmounts() {
 
 /** An array of all instantiated item objects. Used for iterating through
  *  all objects and generally accessing the instantiated objects. */
-const allItemsArray: ItemClass[] = [new Pointer(), new Deacon()];
+const allItemsArray: ItemClass[] = [new AttendChurch(), new Deacon()];
 
 /** A dictionary mapping item names to the corresponding object
  * represented an item. Used to link together object names to the object

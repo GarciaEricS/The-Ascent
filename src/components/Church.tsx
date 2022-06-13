@@ -63,7 +63,7 @@ function ChurchName({churchName, setChurchName, editMode, setEditMode}:
   setEditMode: React.Dispatch<React.SetStateAction<boolean>>
   }) {
 
-  function handleEnter(event: any) {
+  function handleKey(event: any) {
     if (event.target.value !== "") {
       setChurchName((churchName) => event.target.value);
     }
@@ -74,7 +74,12 @@ function ChurchName({churchName, setChurchName, editMode, setEditMode}:
 
   if (editMode) {
     return (
-      <input id="churchNameInput" type='text' onKeyDown={handleEnter} ></input>
+      <input 
+        type='text' 
+        onKeyDown={handleKey} 
+        autoComplete="off"
+        autoFocus
+      />
     )
   }
 
